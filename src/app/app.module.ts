@@ -11,13 +11,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import{HttpClientModule} from '@angular/common/http';
 import {TableModule} from 'primeng/table';
 
-const routes : Routes =[
-  {path: '', component: ViewTaskComponent},
-  {path:'user', component: AddUserComponent },
-  {path:'project', component: AddProjectComponent },
-  {path:'addtask/:id', component: AddTaskComponent },
-  {path:'addtask', component: AddTaskComponent }
-]
+
 
 @NgModule({
   declarations: [
@@ -31,8 +25,7 @@ const routes : Routes =[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    TableModule,
-    RouterModule.forRoot(routes),
+    TableModule,    
     HttpClientModule
   ],
   providers: [],

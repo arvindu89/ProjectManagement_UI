@@ -142,6 +142,7 @@ export class AddProjectComponent implements OnInit {
   Addproject() {
     this.proj.StartDate = new Date(this.proj.StartDate);
     this.proj.EndDate = new Date(this.proj.EndDate);
+    
     if (this.proj.StartDate > this.proj.EndDate) {
       this.dateError = true;
       return false;

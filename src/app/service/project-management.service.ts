@@ -11,7 +11,7 @@ import { Parenttask } from '../model/parenttask';
   providedIn: 'root'
 })
 export class ProjectManagementService {
-  serviceurl:string ="http://localhost:53809/API/";
+  serviceurl:string ="http://localhost/ProjectManagementAPI/API/";
   taskAPI:string= this.serviceurl + "task/";
   userAPI:string= this.serviceurl + "user/";
   projectAPI:string= this.serviceurl + "project/";
