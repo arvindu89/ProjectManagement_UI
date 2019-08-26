@@ -1,0 +1,101 @@
+<div class="col-align">
+    <div class="form-group row">
+        <div class="col-sm-2">
+            <input type="text" placeholder="Enter Project name" [(ngModel)]="task.ProjectName" disabled
+                class="form-control" id="SearchProjectName" name="SearchProjectName" />
+        </div>
+        <div class="col-sm-2">
+            <input type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myProject" value="search"
+                (click)="SearchProjects()">
+        </div>
+        <div class="col-sm-8">
+            <label for="name" class="col-form-label">Sort:</label> &nbsp;
+            <input type="button" class="btn btn-secondary btn-sm" id="btnStartdate" name="btnStartdate"
+                value="StartDate" (click)="SortingTask($event.target.value)" /> &nbsp;&nbsp;
+            <input type="button" class="btn btn-secondary btn-sm" id="btnEnddate" name="btnEnddate" value="EndDate"
+                (click)="SortingTask($event.target.value)" /> &nbsp;&nbsp;
+            <input type="button" class="btn btn-secondary btn-sm" id="btnPriority" name="btnPriority" value="Priority"
+                (click)="SortingTask($event.target.value)" /> &nbsp;&nbsp;
+            <input type="button" class="btn btn-secondary btn-sm" id="btnCompleted" name="btnCompleted"
+                value="Status" (click)="SortingTask($event.target.value)" />
+        </div>
+        <hr>
+        <!-- The Project Modal -->
+        <div class="modal" id="myProject">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Select Project</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <input type="text" [(ngModel)]="txtProjectSearch" name="projectSearch"
+                                    placeholder="Search Project" class="form-control" />
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-secondary" id="projectSearch"
+                                    (click)="SearchProjects()">Search</button>
+                            </div>
+                            <div class="col-sm-4">
+                            </div>
+                        </div>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <td><strong>Select</strong></td>
+                                <td><strong>Project Name</strong></td>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let proj of projects">
+                                    <td><input type="radio" name="gropu1" value="{{proj.ProjectID}}"
+                                            (change)="onProjectItemChange(proj)">
+                                    </td>
+                                    <td>{{proj.ProjectName}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                            (click)="SelectProject()">Ok</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+        <p-table [value]="tasks">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Project</th>
+                    <th>Task</th>
+                    <th>Parent</th>
+                    <th>Priority</th>
+                    <th>Start Date</th>
+                    <th>End date</th>
+                    <th>Action</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-task>
+                <tr>
+                    <td>{{task.ProjectName}}</td>
+                    <td>{{task.TaskName}}</td>
+                    <td>{{task.ParentTaskName}}</td>
+                    <td>{{task.Priority}}</td>
+                    <td>{{task.StartDate | date: 'yyyy-MM-dd'}}</td>
+                    <td>{{task.EndDate | date: 'yyyy-MM-dd'}}</td>
+                    <td>
+                        <button [routerLink]="['/addtask', task.TaskID]"
+                        [disabled]="task.Status" class="btn btn-secondary btn-sm top1Padding">Edit</button>&nbsp;&nbsp;&nbsp;
+                        <input type="button" class="btn btn-secondary btn-sm top1Padding" name="End" value="End Task"
+                        [disabled]="task.Status"  (click)="EndTask(task)" />
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

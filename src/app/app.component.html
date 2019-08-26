@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <h3>Project Manager</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav mr-auto"></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class='fas fa-user-alt'></i> About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row bottomPadding">
+    <div class="col-sm-2 top1Padding">
+      <a [routerLink]="'addtask'" type="button"
+      value="addtask"      
+      (click)="PageSelected($event.target.text)"
+      [ngClass]="(buttonSelected=='Add Task')?'btn activeButton':'btn btn-dark'">Add Task</a>
+    </div>
+    <div class="col-sm-2 top1Padding">
+      <a [routerLink]="''" type="button"
+      value=""
+      (click)="PageSelected($event.target.text)"
+      [ngClass]="(buttonSelected=='View Task')?'btn activeButton':'btn btn-dark'">View Task</a>
+    </div>  
+    <div class="col-sm-2 top1Padding">
+      <a [routerLink]="'project'" type="button"
+      value="project"
+      (click)="PageSelected($event.target.text)"
+      [ngClass]="(buttonSelected=='Add Project')?'btn activeButton':'btn btn-dark'">Add Project</a>
+    </div>
+    <div class="col-sm-2 top1Padding">
+      <a [routerLink]="'user'" type="button"
+      value="user"
+      (click)="PageSelected($event.target.text)"
+      [ngClass]="(buttonSelected=='Add User')?'btn activeButton':'btn btn-dark'">Add User</a>
+    </div>
+    <div class="col-sm-4 top1Padding">
+    </div>
+  </div>
+  <hr class="dottedLine">
+  <router-outlet></router-outlet>
+</div>

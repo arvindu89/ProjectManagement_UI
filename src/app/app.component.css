@@ -1,0 +1,13 @@
+.activeButton{
+    background-color: green;
+    border-color: #343a40;
+    color:#fff
+}
+
+.bottomPadding{
+    padding-bottom: 1rem;
+}
+
+hr.dottedLine{
+    border-top: 1px dashed gray;
+}

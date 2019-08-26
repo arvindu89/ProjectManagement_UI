@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.customButton{
+    background-color: #D3D3D3;
+    color: black
+}
+
+.top2Padding {
+    padding-top:2rem !important;
+}
+
+.top1Padding {
+    padding-top:0.5rem !important;
+}
+
