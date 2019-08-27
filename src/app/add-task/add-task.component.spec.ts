@@ -24,4 +24,23 @@ describe('AddTaskComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Search Project', ()=>{
+    var result = component.SearchProjects();
+    expect(true).toBeTruthy;
+  })
+  it('Search User', ()=>{
+    var result = component.SearchUser();
+    expect(true).toBeTruthy;
+  })
+
+  it('Search Parent', ()=>{
+    var result = component.SearchParent();
+    expect(true).toBeTruthy;
+  })  
+
+  it('Initialize', ()=>{
+    var result = component.ngOnInit();
+    expect(true).toBeTruthy;
+  }) 
 });

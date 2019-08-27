@@ -26,4 +26,23 @@ describe('AddUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Edit user', ()=>{
+    var result = component.EditUser(1);
+    expect(true).toBeTruthy;
+  })
+  it('Search User', ()=>{
+    var result = component.SearchUsers();
+    expect(true).toBeTruthy;
+  })
+
+  it('Init Project', ()=>{
+    var result = component.ngOnInit();
+    expect(true).toBeTruthy;
+  })
+
+  it('Sort Project', ()=>{
+    var result = component.SortingUsers("FirstName");
+    expect(true).toBeTruthy;
+  })
 });

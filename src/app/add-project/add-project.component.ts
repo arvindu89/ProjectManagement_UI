@@ -84,8 +84,7 @@ export class AddProjectComponent implements OnInit {
 
   SearchProjects() {
     this.service.SearchProjects(this.txtSearchProject, "", true).subscribe(data => {
-      this.projects = data;
-
+      this.projects = data;      
     });
   }
 

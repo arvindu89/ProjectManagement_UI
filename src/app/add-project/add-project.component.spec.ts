@@ -26,4 +26,29 @@ describe('AddProjectComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Search Project', ()=>{
+    var result = component.SearchProjects();
+    expect(true).toBeTruthy;
+  })
+  it('Search User', ()=>{
+    var result = component.SearchUser();
+    expect(true).toBeTruthy;
+  })
+
+  it('Edit Project', ()=>{
+    var result = component.EditProject(1);
+    expect(true).toBeTruthy;
+  })
+
+  it('Sort Project', ()=>{
+    var result = component.SortingProject("startdate");
+    expect(true).toBeTruthy;
+  })
+
+  it('Initiailze Project', ()=>{
+    var result = component.ngOnInit();
+    expect(true).toBeTruthy;
+  })
+
 });

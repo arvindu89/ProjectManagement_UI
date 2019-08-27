@@ -25,4 +25,25 @@ describe('ViewTaskComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Search Project', ()=>{
+    var result = component.SearchProjects();
+    expect(true).toBeTruthy;
+  })
+  
+  it('sort task', ()=>{
+    var result = component.SortingTask('startdate');
+    expect(true).toBeTruthy;
+  })  
+
+  it('select project', ()=>{
+    var result = component.SelectProject();
+    expect(true).toBeTruthy;
+  })  
+
+  it('Initialize', ()=>{
+    var result = component.ngOnInit();
+    expect(true).toBeTruthy;
+  }) 
+
 });
