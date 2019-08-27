@@ -9,9 +9,10 @@
     <div class="form-group row">
         <label for="date" class="col-sm-1 col-form-label"></label>
         <div class="col-sm-8">
-            <label><input type="checkbox" name="enableDate" [(ngModel)]="checkboxFlag" (change)="enableDate()" />Set
-                start and
-                end date </label>&nbsp;&nbsp;
+            <label>
+                <input type="checkbox" name="enableDate" [(ngModel)]="checkboxFlag" (change)="enableDate()" />Set
+                start and end date
+            </label>&nbsp;&nbsp;
             <input type="date" placeholder="Start date" class="col-sm-4" [disabled]="datevisibility"
                 [ngModel]="proj.StartDate | date: 'yyyy-MM-dd'" (ngModelChange)="proj.StartDate = $event"
                 name="startdate" value="" /> &nbsp;
