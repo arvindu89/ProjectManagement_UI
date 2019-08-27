@@ -1,7 +1,7 @@
 <form ngNativeValidate #myForm="ngForm" (ngSubmit)="register(myForm);Addproject();">
     <div class="form-group row">
         <label for="ProjectName" class="col-sm-1 col-form-label">Project:</label>
-        <div class="col-sm-6">
+        <div class="col-sm-8">
             <input type="text" placeholder="Enter Project name" required [(ngModel)]="proj.ProjectName"
                 class="form-control" id="ProjectName" name="ProjectName" />
         </div>
@@ -20,21 +20,21 @@
                 [ngModel]="proj.EndDate | date: 'yyyy-MM-dd'" (ngModelChange)="proj.EndDate = $event" name="enddate" />
         </div>
 
-        <div class="col-sm-6" *ngIf="dateError">
+        <div class="col-sm-8" *ngIf="dateError">
             <label for="date" class="col-sm-2 col-form-label"></label>
             <label style="color: red" class="col-form-label">Start Date is greater than End Date</label>
         </div>
     </div>
     <div class="form-group row">
         <label for="priority" class="col-sm-1 col-form-label">Priority:</label>
-        <div class="col-sm-5">
+        <div class="col-sm-8">
             <input type="range" [(ngModel)]="proj.Priority" class="form-control" id="Priority" name="Priority" min="1"
                 max="30" required /> <label>{{proj.Priority}}</label>
         </div>
     </div>
     <div class="form-group row">
         <label for="Pname" class="col-sm-1 col-form-label">Manager:</label>
-        <div class="col-sm-5" id="Pname">
+        <div class="col-sm-7" id="Pname">
             <input type="hidden" [(ngModel)]="proj.UserID" name="userID" id="userID" />
             <input type="text" [(ngModel)]="proj.UserName" placeholder="Choose user" disabled class="form-control"
                 id="UserName" name="UserName" />
